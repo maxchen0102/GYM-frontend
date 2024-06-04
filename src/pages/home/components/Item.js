@@ -1,8 +1,10 @@
 
 const Item=()=>{
-    return <div>
-        <h1>Item</h1>
+    return <div className="item">
+        <p>Item description</p>
+        <button className="remove">刪除</button>
     </div>
 }
 
 export default Item
+
