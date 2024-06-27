@@ -7,6 +7,7 @@ export default function App() {
         <Welcome name="Sara" />
         <Welcome name="John" />
         <Welcome name="Alex" />
+        <Welcome name="Alex" />
         <Head/>
       </div>
     );
