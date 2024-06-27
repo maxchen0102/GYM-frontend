@@ -1,14 +1,15 @@
-import Welcome from './welcome.js';
-import Head from './head.js';
 
-export default function App() {
+
+import Dashboard from './components/dashboard/dashboard';
+import React from 'react';
+import Login from './components/account/login';
+import Logout from './components/account/logout';
+
+export default function Layout() {
     return (
       <div>
-        <Welcome name="Sara" />
-        <Welcome name="John" />
-        <Welcome name="Alex" />
-        <Welcome name="Alex" />
-        <Head/>
+        <Dashboard />
+        <Login />
       </div>
     );
   }
