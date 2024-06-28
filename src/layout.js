@@ -12,7 +12,7 @@ export default function Layout() {
     return (
       <Router>
       <div>
-        <h5>leyout page </h5>
+
           <Routes>
             <Route path="/" element={<Board />}/>
           <Route path="/category" element={<Category />}/>

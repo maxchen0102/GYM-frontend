@@ -1,12 +1,18 @@
 
-
+import React, { useState } from 'react';
 import GetCategoryData from './get_data';
 
 export  function Category() {
+    const [showData,setShowData]= useState(false);
+
+    const handleClick =()=>{
+        setShowData(!showData);
+    };
+
     return (
         <div>
-            <h1>This is Category</h1>
-            <GetCategoryData />
+            <button onClick={handleClick}>Show your Category Data</button>
+            {showData && <GetCategoryData />}
             
         </div>
     );
