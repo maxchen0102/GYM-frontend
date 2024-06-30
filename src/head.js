@@ -13,6 +13,7 @@ export default function App() {
         <div>
             <Pic/>
             <Pic/>
+            <Pic/>
             <button type="button" class="btn btn-primary">Primary</button>
         </div>
     )
