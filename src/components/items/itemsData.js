@@ -1,7 +1,7 @@
 import React from 'react';
-import ItemComponent from './ItemComponent';
+import ItemComponent from './items';
 
-function ItemData() {
+const ItemData=()=> {
     const items = [
         { id: 1, text: 'An item' },
         { id: 2, text: 'A second item' },
