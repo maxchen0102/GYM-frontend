@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import AddCategoryModal from './addCategory';
+
 
 const GetCategoryData = () => {
   const [data, setData] = useState(null);
@@ -18,6 +20,14 @@ const GetCategoryData = () => {
       });
   }, []);
 
+  const handleAddCategory = (newCategory) => {
+    setData(prevData => ({
+      ...prevData,
+      category_names: [...prevData.category_names, newCategory.name]
+    }));
+  };
+
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -35,8 +45,13 @@ const GetCategoryData = () => {
         </div>
         ))}
       </div>
+      <AddCategoryModal onAdd={handleAddCategory}/> 
     </div>
+
+
   );
 };
+
+
 
 export default GetCategoryData;
