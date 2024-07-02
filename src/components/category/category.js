@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import GetCategoryData from './get_data';
-import ItemData  from '../items/itemsData';
 import { useNavigate } from 'react-router-dom';
 import AddCategoryModal from './addCategory';
 

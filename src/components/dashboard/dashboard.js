@@ -10,12 +10,7 @@ export default function Board() {
         navigate('/');
     }
 
-    const items_test = [
-        { id: 1, text: 'An item' },
-        { id: 2, text: 'A second item' },
-        { id: 3, text: 'A third item' },
 
-    ];  
 
     return (
       <div>
@@ -30,9 +25,6 @@ export default function Board() {
             </div>
         
 
-
-
-    
         </div>
       </div>
     );

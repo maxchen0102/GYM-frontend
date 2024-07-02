@@ -16,7 +16,9 @@ const GetCategoryData = () => {
   const fetchData = async () => {
     try {
       const response = await axios.post('http://127.0.0.1:9999/personal/get_category/', UUID);
-      setData(response.data);
+      setData(response.data.categories);  
+      console.log(response.data);
+      console.log(response.data.categories);
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -40,12 +42,13 @@ const GetCategoryData = () => {
     <div className="container mt-5">
       <h1 className="text-center mb-4">Data from API Category</h1>
       <div className="row">
-        {data.category_names.filter(value=>value!=null).map((value, index) => (
+        {data.filter(category=>category!=null).map((category, index) => (
         
         <div className="card" style={{ margin: "5px 0" }} >
-        <h5 className="card-header">{value}</h5>
+        <h5 className="card-header">{category.name}</h5>
         <div className="card-body">
             <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <Link to={`/category/${category.id}`} className="btn btn-primary">View Items</Link>
         </div>
         </div>
         ))}
