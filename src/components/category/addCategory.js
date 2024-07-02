@@ -12,9 +12,9 @@ export default function AddCategoryModal({ onAdd }) {
     const data = {
         name: categoryName,
         UUID: UUID,  // 假設這是你需要的 UUID
-      };
-
-    axios.post('http://127.0.0.1:9999/personal/add_category/', data)
+      };    
+    
+    axios.post('http://127.0.0.1:9999/personal/add_category/', data)    
       .then(response => {
         onAdd();
         setCategoryName('');

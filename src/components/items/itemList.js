@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const ItemList = () => {
   const { id } = useParams();
-  const [items, setItems] = useState([]);
+  const [item_list, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -12,9 +12,9 @@ const ItemList = () => {
     const fetchItems = async () => {
       try {
         const response = await axios.post('http://127.0.0.1:9999/personal/get_items/', { category_id: id });
-        setItems(response.data.items);
+        setItems(response.data.item_list);
         console.log(response.data);
-        console.log(response.data.items);
+        console.log(response.data.item_list);
         console.log("success");
         setLoading(false);
       } catch (error) {
@@ -33,7 +33,7 @@ const ItemList = () => {
     <div className="container mt-5">
       <h1 className="text-center mb-4">Items in Category {id}</h1>
       <ul className="list-group">
-        {items.map(item => (
+        {item_list.map(item => (
           <li key={item.id} className="list-group-item">{item.name}</li>
         ))}
       </ul>

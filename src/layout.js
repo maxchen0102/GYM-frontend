@@ -17,7 +17,8 @@ export default function Layout() {
           <Routes>
             <Route path="/" element={<Board />}/>
           <Route path="/category" element={<Category />}/>
-          <Route path="/category/:id" component={ItemList} />
+          <Route path="/category/:id" element={<ItemList/> } />
+          
         </Routes>
         </div>
 
