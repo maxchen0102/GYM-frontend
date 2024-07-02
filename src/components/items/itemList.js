@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams ,useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -9,6 +9,7 @@ const ItemList = () => {
   const [item_list, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -31,6 +32,7 @@ const ItemList = () => {
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Items in Category {id}</h1>
+      <button className="btn btn-secondary mt-4" onClick={() => navigate(-1)}>Back to Items</button>
       <ul className="list-group">
         {item_list.map(item => (
           <li key={item.id} className="list-group-item">

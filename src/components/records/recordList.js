@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams ,useNavigate} from 'react-router-dom';
 import axios from 'axios';
+
 
 const RecordList = () => {
   const { itemId } = useParams();
@@ -8,6 +9,11 @@ const RecordList = () => {
   const [records_list, setRecords] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
+  const navigate = useNavigate();
+  const navigateToItem = (itemId) => {
+    navigate(`/category/${itemId}`);
+}
 
   useEffect(() => {
     const fetchRecordDetails = async () => {
@@ -32,7 +38,7 @@ const RecordList = () => {
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4"> {item}</h1>
-      
+      <button className="btn btn-secondary mt-4" onClick={() => navigate(-1)}>Back to Items</button>
       <div>
         <h2>Records:</h2>
         <ul className="list-group">
