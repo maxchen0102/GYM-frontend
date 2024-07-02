@@ -1,0 +1,30 @@
+.nav-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* 使在行動裝置上滑動更平滑 */
+  }
+  
+  .nav-pills {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    display: inline-block;
+    margin-right: 10px; /* 添加間距 */
+  }
+  
+  .nav-link {
+    display: inline-block;
+    padding: 10px 15px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .nav-link.active {
+    color: #fff;
+    background-color: #007bff;
+  }
+  

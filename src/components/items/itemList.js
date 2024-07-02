@@ -34,7 +34,7 @@ const ItemList = () => {
   return (
    <Container className="mt-5">
       <Button variant="secondary" className="mb-4" onClick={() => navigate(-1)}>Back to Categories</Button>
-      <h1 className="text-center mb-4">健身項目 - {category_name}</h1>
+      <h1 className="text-center mb-4">category name - {category_name}</h1>
       <div className="list-group">
         {item_list.map(item => (
           <Link 
