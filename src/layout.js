@@ -14,7 +14,6 @@ export default function Layout() {
     return (
       <Router>
       <div>
-
           <Routes>
             <Route path="/" element={<Board />}/>
           <Route path="/category" element={<Category />}/>
