@@ -13,6 +13,9 @@ const ItemList = () => {
       try {
         const response = await axios.post('http://127.0.0.1:9999/personal/get_items/', { category_id: id });
         setItems(response.data.items);
+        console.log(response.data);
+        console.log(response.data.items);
+        console.log("success");
         setLoading(false);
       } catch (error) {
         setError(error);
