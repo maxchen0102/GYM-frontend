@@ -7,7 +7,6 @@ export default function AddCategoryModal({ onAdd }) {
   const [UUID, setUUID] = useState(''); // [1
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
   const handleAddCategory = () => {
 
     const data = {
@@ -17,7 +16,7 @@ export default function AddCategoryModal({ onAdd }) {
 
     axios.post('http://127.0.0.1:9999/personal/add_category/', data)
       .then(response => {
-        onAdd(response.data);
+        onAdd();
         setCategoryName('');
         setUUID(''); // [1
         setError(null);
