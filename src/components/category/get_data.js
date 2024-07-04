@@ -29,6 +29,7 @@ const GetCategoryData = () => {
     }
   };
 
+  // 先獲取數據
   useEffect(() => {
     fetchData();
   }, []); // 空依賴數組，確保這段代碼只在組件掛載時運行一次
@@ -42,8 +43,8 @@ const GetCategoryData = () => {
     alert("add category")
   };
 
-  const handleSwipe = (id) => {
-    setData(data.filter(category => category.id !== id)); // 刪除滑動的卡片(only 前端)
+  const deleteCategory = (id) => {
+    alert(`delete category with id ${id}`);
   };
 
   if (loading) return <div>Loading...</div>;
@@ -54,7 +55,7 @@ const GetCategoryData = () => {
       <h1 className="text-center mb-4">Data from API Category</h1>
       <div className="row">
       {data.filter(category => category != null).map((category, index) => (
-          <SwipeableCard key={index} category={category} onSwipe={handleSwipe} />
+          <SwipeableCard key={index} category={category} onDelete={deleteCategory} />
         ))}
       </div>
 
