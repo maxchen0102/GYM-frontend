@@ -1,0 +1,18 @@
+
+
+/* 將按鈕固定在視窗的右下角 */
+.fixed-bottom-right {
+    position: fixed; /* 固定定位，使元素相對於視窗進行定位 */
+    bottom: 20px;    /* 距離視窗底部 20 像素 */
+    right: 20px;     /* 距離視窗右側 20 像素 */
+    z-index: 1000;   /* 設置較高的 z-index 確保元素在其他內容之上顯示 */
+    background: none; /* 移除按鈕背景 */
+    border: none; /* 移除按鈕邊框 */
+    padding: 0; /* 移除按鈕內邊距 */
+}
+
+.custom-icon {
+    width: 50px; /* 根據需要調整圖像大小 */
+    height: 50px; /* 根據需要調整圖像大小 */
+    display: block; /* 確保圖片顯示為區塊元素 */
+}

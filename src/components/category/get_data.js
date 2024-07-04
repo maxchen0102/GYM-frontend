@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddCategoryModal from './addCategory';
 import { Link } from 'react-router-dom'; // 確保正確導入 Link
+import A from './addButtonIcon.png'
+import './category.css';
 
 
 const GetCategoryData = () => {
@@ -34,6 +36,10 @@ const GetCategoryData = () => {
     await fetchData(); // 添加新分類後重新獲取數據
   };
 
+  const handleAddCategory = () => {
+    console.log("add category");
+    alert("add category")
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -53,6 +59,9 @@ const GetCategoryData = () => {
         </div>
         ))}
       </div>
+      <button className="fixed-bottom-right" onClick={handleAddCategory}>
+                <img src={A} alt="Add" className="custom-icon" />
+            </button>
       <AddCategoryModal onAdd={reloadCategory}/> 
     </div>
 
