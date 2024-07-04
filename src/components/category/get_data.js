@@ -4,7 +4,8 @@ import AddCategoryModal from './addCategory';
 import { Link } from 'react-router-dom'; // 確保正確導入 Link
 import A from './addButtonIcon.png'
 import './category.css';
-
+import { useSwipeable } from 'react-swipeable';
+import SwipeableCard from './SwipeableCard'; // 導入 SwipeableCard 組件
 
 const GetCategoryData = () => {
   const [data, setData] = useState(null);
@@ -41,6 +42,10 @@ const GetCategoryData = () => {
     alert("add category")
   };
 
+  const handleSwipe = (id) => {
+    setData(data.filter(category => category.id !== id)); // 刪除滑動的卡片(only 前端)
+  };
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -48,15 +53,8 @@ const GetCategoryData = () => {
     <div className="container mt-5">
       <h1 className="text-center mb-4">Data from API Category</h1>
       <div className="row">
-        {data.filter(category=>category!=null).map((category, index) => (
-        
-        <div className="card" style={{ margin: "5px 0" }} >
-        <h5 className="card-header">{category.name}</h5>
-        <div className="card-body">
-            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <Link to={`/category/${category.id}`} className="btn btn-primary">View Items</Link>
-        </div>
-        </div>
+      {data.filter(category => category != null).map((category, index) => (
+          <SwipeableCard key={index} category={category} onSwipe={handleSwipe} />
         ))}
       </div>
 

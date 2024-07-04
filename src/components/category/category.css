@@ -16,3 +16,29 @@
     height: 50px; /* 根據需要調整圖像大小 */
     display: block; /* 確保圖片顯示為區塊元素 */
 }
+.card-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .delete-button {
+    position: absolute;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .card-container .delete-button {
+    opacity: 1;
+  }
+  
+  .swipeable-card {
+    transition: transform 0.2s ease-out;
+  }
