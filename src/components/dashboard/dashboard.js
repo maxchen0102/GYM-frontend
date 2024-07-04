@@ -12,7 +12,7 @@ export default function Board() {
     navigate('/category');
   }
 
-  const { value, loading, error } = useContext(MyContext);
+
   
   return (
     <div className="container mt-5">
