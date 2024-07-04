@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './NavPills.css'; 
 
+import Dropdown from './dropdown';
+
 export default function Board() {
   const navigate = useNavigate();
   const navigateToCategory = () => {
@@ -20,36 +22,19 @@ export default function Board() {
           <img src="path/to/profile-image.jpg" alt="Profile" className="rounded-circle" width="40" height="40" />
         </div>
       </div>
+        
+        <div className='row'>
+            <div className='col-3'>
+            
+            </div>
+            <div className='col-4'>
+                 {/* 下拉選單 */}
+        <Dropdown/>
+            </div>
+            </div>     
+            <div className='col-4'></div>
 
-      {/* 類別選擇 */}
-      <div className="nav-container">
-        <ul className="nav nav-pills mb-4">
-          <li className="nav-item">
-            <a className="nav-link active" href="#thighs">大腿</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#shoulders">肩膀</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#calves">小腿</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#back">背</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#arms">手臂</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#chest">胸</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#legs">腿部</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#neck">脖子</a>
-          </li>
-        </ul>
-      </div>
+        
 
       {/* 健身次數和數據顯示 */}
       <div className="row mb-4">
