@@ -59,9 +59,7 @@ const GetCategoryData = () => {
         </div>
         ))}
       </div>
-      <button className="fixed-bottom-right" onClick={handleAddCategory}>
-                <img src={A} alt="Add" className="custom-icon" />
-            </button>
+
       <AddCategoryModal onAdd={reloadCategory}/> 
     </div>
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Modal } from 'react-bootstrap';
+import A from './addButtonIcon.png'
+import './category.css';
 
 export default function AddCategoryModal({ onAdd }) {
   const [categoryName, setCategoryName] = useState('');
@@ -8,6 +10,8 @@ export default function AddCategoryModal({ onAdd }) {
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const handleAddCategory = () => {
+  
+    
 
     const data = {
         name: categoryName,
@@ -29,9 +33,12 @@ export default function AddCategoryModal({ onAdd }) {
 
   return (
     <div>
-      <Button variant="primary" onClick={() => setShowModal(true)}>
-        Add Category
-      </Button>
+
+      <button className="fixed-bottom-right"onClick={() => setShowModal(true)}>
+                <img src={A} alt="Add" className="custom-icon" />
+            </button>
+
+
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
@@ -64,6 +71,8 @@ export default function AddCategoryModal({ onAdd }) {
           <Button variant="primary" onClick={handleAddCategory}>Save</Button>
         </Modal.Footer>
       </Modal>
+
+      
     </div>
   );
 }
