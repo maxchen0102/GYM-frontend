@@ -1,8 +1,10 @@
-import React from 'react';
+import React ,{ useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './NavPills.css'; 
 
 import Dropdown from './dropdown';
+
+import { MyContext } from '../../contexts/context';
 
 export default function Board() {
   const navigate = useNavigate();
@@ -10,6 +12,8 @@ export default function Board() {
     navigate('/category');
   }
 
+  const { value, loading, error } = useContext(MyContext);
+  
   return (
     <div className="container mt-5">
       {/* 頂部導航欄 */}
