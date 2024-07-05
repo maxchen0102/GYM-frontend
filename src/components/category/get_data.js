@@ -6,6 +6,9 @@ import A from './addButtonIcon.png'
 import './category.css';
 import { useSwipeable } from 'react-swipeable';
 import SwipeableCard from './SwipeableCard'; // 導入 SwipeableCard 組件
+import {removeCategory} from '../../services/categoryService';
+
+
 
 const GetCategoryData = () => {
   const [data, setData] = useState(null);
@@ -43,19 +46,22 @@ const GetCategoryData = () => {
     alert("add category")
   };
 
-  const deleteCategory = (id) => {
-    alert(`delete category with id ${id}`);
-  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
+
+const hadleDeleteCategory = async (id) => {
+  await removeCategory(id); // 確保等待刪除操作完成
+  reloadCategory(); // 然後重新加載類別
+  console.log("delete category with id", id);
+};
 
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Data from API Category</h1>
       <div className="row">
       {data.filter(category => category != null).map((category, index) => (
-          <SwipeableCard key={index} category={category} onDelete={deleteCategory} />
+          <SwipeableCard key={index} category={category} onDelete={hadleDeleteCategory} />
         ))}
       </div>
 
