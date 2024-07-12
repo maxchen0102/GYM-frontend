@@ -1,20 +1,33 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setAuth }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    
+    const data = new FormData();
+    data.append('username', username);
+    data.append('password', password);
+    
+
+
     try {
-      const response = await axios.post('http://localhost:8000/login/', {
-        username,
-        password,
+      const response = await axios.post('http://localhost:9999/sign_in/', data ,{
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        }
       });
-      if (response.data.status === 'success') {
+      if (response.status === 200) {
         setAuth(true);
+        alert("You are logged in");
+        navigate('/');
       } else {
         setError('Invalid credentials');
       }

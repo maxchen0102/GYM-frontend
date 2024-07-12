@@ -16,10 +16,9 @@ export default function Category() {
                 <div className='col-4'>
                      <button  type="button" className="btn btn-success" onClick={navigateToDashboard}>dashboard</button>
                 </div>
-                
+                    
             </div>
             <GetCategoryData />
-
             
 
             
