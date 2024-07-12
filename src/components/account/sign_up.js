@@ -24,7 +24,7 @@ function SignUp() {
     data.append('password2', password2);
 
     try {
-      const response = await axios.post('http://localhost:9999/sign_up/',data,  {
+      const response = await axios.post('http://localhost:8000/sign_up/',data,  {
         headers: {
           'Content-Type': 'multipart/form-data',
         }

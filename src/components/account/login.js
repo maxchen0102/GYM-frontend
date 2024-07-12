@@ -16,22 +16,19 @@ const Login = ({ setAuth }) => {
     data.append('username', username);
     data.append('password', password);
     
-
-
     try {
-      const response = await axios.post('http://localhost:9999/sign_in/', data ,{
+      const response = await axios.post('http://localhost:8000/sign_in/', data ,{
         headers: {
           'Content-Type': 'multipart/form-data',
         }
       });
       if (response.status === 200) {
-        setAuth(true);
         alert("You are logged in");
         navigate('/');
       } else {
         setError('Invalid credentials');
       }
-    } catch (err) {
+    } catch (error) {
       setError('An error occurred. Please try again.');
     }
   };
