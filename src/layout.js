@@ -10,6 +10,7 @@ import { MyProvider } from "./contexts/context";
 import Sign_up from "./components/account/sign_up";
 
 
+
 export default function Layout() {
   return (
 <MyProvider>
@@ -22,7 +23,7 @@ export default function Layout() {
           <Route path="/item/:itemId" element={<RecordList />} />{" "}
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/sign_up" element={<Sign_up />} />
+
         </Routes>
       </div>
     </Router>

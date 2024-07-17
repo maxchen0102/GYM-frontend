@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({ setAuth }) => {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -24,7 +24,10 @@ const Login = ({ setAuth }) => {
       });
       if (response.status === 200) {
         alert("You are logged in");
+        const value = sessionStorage.getItem('sessionidG');
+        console.log(value); // 輸出: 'value'
         navigate('/');
+
       } else {
         setError('Invalid credentials');
       }
