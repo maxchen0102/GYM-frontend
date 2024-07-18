@@ -27,7 +27,8 @@ function SignUp() {
       const response = await axios.post('http://localhost:9999/sign_up/',data,  {
         headers: {
           'Content-Type': 'multipart/form-data',
-        }
+        },
+        withCredentials: true,
       });
 
       if (response.status === 200) {
