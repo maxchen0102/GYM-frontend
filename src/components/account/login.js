@@ -20,7 +20,8 @@ const Login = () => {
       const response = await axios.post('http://localhost:9999/sign_in/', data ,{
         headers: {
           'Content-Type': 'multipart/form-data',
-        }
+        },
+        withCredentials: true,
       });
       if (response.status === 200) {
         alert("You are logged in");
