@@ -21,7 +21,9 @@ const GetCategoryData = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:9999/personal/get_category/', UUID);
+      const response = await axios.post('http://127.0.0.1:9999/personal/get_category/', {
+        withCredentials: true
+      });
       setData(response.data.categories);  
       console.log(response.data);
       console.log(response.data.categories);
