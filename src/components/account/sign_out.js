@@ -3,11 +3,11 @@ import axions from "axios";
 import { useNavigate } from "react-router-dom";
 
 
-const Logout=()=>{
+const SignOut=()=>{
     const navigate = useNavigate();
     const handleLogout= async ()=>{
         try {
-            await axions.get("http://localhost:9999/logout");
+            await axions.get("http://localhost:9999/sign_out");
             // setAuth(false);  maybe not needed (we use session ID )
         } 
         
@@ -19,9 +19,9 @@ const Logout=()=>{
     };
     
     return (
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout}>Sign_out</button>
         
     ); 
 };
 
-export default Logout;
+export default SignOut;

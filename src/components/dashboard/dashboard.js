@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './NavPills.css'; 
 
 import Dropdown from './dropdown';
-import Logout from '../account/logout';
+import Sign_out from '../account/sign_out';
 
 import { MyContext } from '../../contexts/context';
 
@@ -19,7 +19,7 @@ export default function Board() {
     <div className="container mt-5">
       {/* 頂部導航欄 */}
       <div className="row mb-4">
-        <Logout/>
+        <Sign_out/>
         <div className="col d-flex justify-content-between align-items-center">
           <button className="btn btn-outline-primary">
             <i className="fas fa-bars"></i>
